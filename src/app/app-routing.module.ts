@@ -1,9 +1,11 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { AppComponent } from './app.component';
+
+import { AuthGuard } from './core/auth-guard/auth-guard.service';
 
 const routes: Routes = [
-  {path: '', pathMatch: 'full', loadChildren: () => import("./features/home/home.module").then(m => m.HomeModule)}
+  {path: '', pathMatch: 'full', loadChildren: () => import("./features/home/home.module").then(m => m.HomeModule)},
+  {path: 'library', loadChildren: () => import("./features/library/library.module").then(m => m.LibraryModule), canActivate: [AuthGuard]}
 ];
 
 @NgModule({

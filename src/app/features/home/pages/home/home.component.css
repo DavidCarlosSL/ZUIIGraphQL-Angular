@@ -1,0 +1,7 @@
+.buttonSelected {
+    color: #000; background-color: #fff; border-radius: 8px; border: 1px solid; height: 44px; font-family: 'Sora';
+}
+
+.buttonNotSelected {
+    color: #fff; background-color: #000; border-radius: 8px; border: 1px solid #fff; height: 44px; font-family: 'Sora';
+}

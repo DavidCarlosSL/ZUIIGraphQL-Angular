@@ -1,0 +1,44 @@
+<section style="margin-top: 4%;">
+    <form [formGroup]="signUpForm" (ngSubmit)="signUpSubmit()">
+        <div>
+            <div style="display: flex; justify-content: space-between; flex-wrap: wrap;">
+                <p style="color: #fff; font-family: 'Sora'; font-size: 16px;">Nome</p>            
+                <p *ngIf="signUpForm.controls.nameUser.touched && signUpForm.controls.nameUser.value == ''" style="color: rgb(209, 61, 61); font-family: 'Sora'; font-size: 16px;">Informe o nome</p>
+                <p *ngIf="signUpForm.controls.nameUser.hasError('minlength')" style="color: rgb(209, 61, 61); font-family: 'Sora'; font-size: 15px;">Minimo 3 caracteres</p>
+            </div>
+            <input 
+            type="text"
+            formControlName="nameUser"
+            style="width: 100%; background-color: #151515; border: 1px solid #151515; border-radius: 8px; height: 48px; color: #fff; font-family: 'Sora'; padding-left: 10px;">
+        </div>
+        <div style="margin-top: 5%;">
+            <div style="display: flex; justify-content: space-between; flex-wrap: wrap;">
+                <p style="color: #fff; font-family: 'Sora'; font-size: 16px;">Email</p>            
+                <p *ngIf="signUpForm.controls.emailUser.touched && signUpForm.controls.emailUser.value == ''" style="color: rgb(209, 61, 61); font-family: 'Sora'; font-size: 16px;">Informe o email</p>
+                <p *ngIf="signUpForm.controls.emailUser.hasError('email')" style="color: rgb(209, 61, 61); font-family: 'Sora'; font-size: 16px;">Email inválido</p>
+                <p *ngIf="emailInUse" style="color: rgb(209, 61, 61); font-family: 'Sora'; font-size: 16px;">Email já em uso</p>  
+            </div>
+            <input 
+            type="email"
+            formControlName="emailUser"
+            style="width: 100%; background-color: #151515; border: 1px solid #151515; border-radius: 8px; height: 48px; color: #fff; font-family: 'Sora'; padding-left: 10px;">
+        </div>
+        <div style="margin-top: 5%;">
+            <div style="display: flex; justify-content: space-between; flex-wrap: wrap;">
+                <p style="color: #fff; font-family: 'Sora'; font-size: 16px;">Senha</p>
+                <p *ngIf="signUpForm.controls.passwordUser.touched && signUpForm.controls.passwordUser.value == ''" style="color: rgb(209, 61, 61); font-family: 'Sora'; font-size: 16px;">Informe a senha</p>
+                <p *ngIf="signUpForm.controls.passwordUser.hasError('minlength')" style="color: rgb(209, 61, 61); font-family: 'Sora'; font-size: 15px;">Minimo 6 caracteres</p>
+            </div>
+            <input 
+            type="password"
+            formControlName="passwordUser"
+            style="width: 100%; background-color: #151515; border: 1px solid #151515; border-radius: 8px; height: 48px; color: #fff; font-family: 'Sora'; padding-left: 10px;">
+        </div>
+        <button
+        [disabled]="signUpForm.status == 'INVALID'"
+        style="background: rgb(245,5,48); background: linear-gradient(90deg, rgba(245,5,48,1) 0%, rgba(245,135,5,1) 100%); border-width: 0px; border-radius: 128px;
+        color: #fff; margin-top: 10%; width: 100%; height: 56px; font-family: 'Sora'; font-size: 18px;"
+        type="submit"
+        >Entrar</button>
+    </form>
+</section>

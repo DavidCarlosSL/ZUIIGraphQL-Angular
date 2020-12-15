@@ -1,1 +1,35 @@
-<p>home works!</p>
+<div style="width: 100%; height: 100%; background-image: url('https://mechapp.s3-sa-east-1.amazonaws.com/Rectangle+8.png'); background-repeat: repeat;">
+    <section style="display: flex; height: 110px; justify-content: center; align-items: stretch;">
+        <div style="display: flex; width: 70%; align-items: flex-end; justify-content: space-between;">
+            <a routerLink="/"><img src="https://mechapp.s3-sa-east-1.amazonaws.com/Zuii.png"/></a>
+        </div>
+    </section>
+    <section style="display: flex; justify-content: center; height: 75%;">
+        <div style="display: flex; align-items: center; flex-wrap: wrap; width: 70%; justify-content: space-between;">
+            <img src="https://mechapp.s3-sa-east-1.amazonaws.com/texto+zuii.png" style="max-width: 60%; min-width: 250px;">
+            <mat-card style="display: flex; background-color: #000; width: 38%; min-width: 275px; border: 1px solid #fff; justify-content: center;">
+                <div style="display: flex; flex-direction: column; align-items: center; width: 100%; margin-top: 4%;">
+                    <mat-card-title style="display: flex; justify-content: space-between; width: 90%;">
+                        <button 
+                        (click)="changeComponent('signInComponent')" 
+                        [ngClass]="{'buttonSelected': selectedComponent == 'signInComponent', 'buttonNotSelected': selectedComponent == 'signUpComponent'}" 
+                        mat-button style="width: 48%;">
+                            Entrar
+                        </button>
+                        <button 
+                        (click)="changeComponent('signUpComponent')" 
+                        [ngClass]="{'buttonSelected': selectedComponent == 'signUpComponent', 'buttonNotSelected': selectedComponent == 'signInComponent'}" 
+                        mat-button style="width: 48%;">
+                            Cadastrar
+                        </button>
+                    </mat-card-title>
+                    <mat-card-content style="display: flex; flex-direction: column; height: 100%; width: 90%; justify-content: center;">
+                        <app-signin *ngIf="selectedComponent == 'signInComponent'"></app-signin>
+                        <app-signup *ngIf="selectedComponent == 'signUpComponent'" (changeToSignInComponent)="changeComponent('signInComponent')"></app-signup>
+                    </mat-card-content>
+                </div>
+            </mat-card>
+        </div>
+    </section>
+</div>
+    

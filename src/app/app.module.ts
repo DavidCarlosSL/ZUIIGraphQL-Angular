@@ -7,7 +7,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { GraphQLModule } from './core/graphql/graphql.module';
 import { HttpClientModule } from '@angular/common/http';
-import { MaterialModule } from './shared/material.module';
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -20,7 +20,7 @@ import { MaterialModule } from './shared/material.module';
     BrowserAnimationsModule,
     GraphQLModule,
     HttpClientModule, 
-    MaterialModule
+    SharedModule
   ],
   providers: [],
   bootstrap: [AppComponent]
