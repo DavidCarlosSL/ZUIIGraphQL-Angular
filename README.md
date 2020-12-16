@@ -1,7 +1,7 @@
 <h1 align="center"> ZUII GraphQL Angular  <image src="https://mechapp.s3-sa-east-1.amazonaws.com/logo.png" height="32px" width="32px" /> <image src="https://mechapp.s3-sa-east-1.amazonaws.com/5847ea22cef1014c0b5e4833.png" height="32px" width="32px" /> </h1>
 <br>
 <h2> :dart: Objetivo </h2>
-<p> Aprender Angular e sua implementação com GraphQL. </p>
+<p> Aprender Angular e sua implementação com GraphQL. </p><br>
 
 <h2> :page_with_curl: Descrição do Projeto </h2>
 <p> A ideia era criar uma plataforma de compras fictícias de músicas. </p>
