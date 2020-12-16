@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
+import { LibraryService } from '../../services/library.service';
 
 @Component({
   selector: 'app-library',
@@ -7,9 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LibraryComponent implements OnInit {
 
-  constructor() { }
+  public userLibrary;
 
-  ngOnInit(): void {
+  constructor(private libraryService: LibraryService) { }
+
+  ngOnInit() {
+    this.getLibrary();
   }
 
+  public getLibrary(){
+    this.libraryService.getLibraryAlbums().subscribe((response) => {
+      this.userLibrary = response.data.library[0].libraryAlbums;
+    }, (error) => console.log(error));
+  }
 }

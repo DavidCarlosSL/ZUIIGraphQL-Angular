@@ -7,6 +7,7 @@ import { MatFormFieldModule } from "@angular/material/form-field";
 import { MatIconModule } from "@angular/material/icon";
 import { MatInputModule } from "@angular/material/input";
 import { MatProgressSpinnerModule } from "@angular/material/progress-spinner";
+import { TitlePipe } from "./pipes/titles.pipe";
 
 const MaterialModule = [
     MatButtonModule,
@@ -17,12 +18,19 @@ const MaterialModule = [
     MatProgressSpinnerModule
 ]
 
+const PipesModule = [
+    TitlePipe
+]
+
 @NgModule({
     imports: [],
     exports: [
         ReactiveFormsModule,
-        ...MaterialModule
+        ...MaterialModule,
+        ...PipesModule
     ],
-    declarations: []
+    declarations: [
+        ...PipesModule
+    ]
 })
 export class SharedModule {}

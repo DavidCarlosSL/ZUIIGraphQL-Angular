@@ -1,2 +1,18 @@
-<p>library works!</p>
-<app-user-navigation></app-user-navigation>
+<div style="height: auto; min-height: 1024px; background-color: rgba(0, 0, 0, 0.95);">
+    <app-user-navigation></app-user-navigation>
+    <div style="display:flex; width: 100%; justify-content: center;">
+        <div style="width: 70%;margin-top: 48px;">
+            <h1 style="color: #fff; font-size: 32px; font-family: 'Sora';">Sua Biblioteca</h1>
+            <div>
+                <div *ngFor="let album of userLibrary" style="margin-top: 32px; float: left; padding-right: 1.2%;">
+                    <a routerLink="tracks/{{album.id_library_album}}" style="text-decoration: none;">
+                        <img src="{{album.albumId.image_album}}" style="border-radius: 8px;"/>
+                        <div style="background-color: #151515; margin-top: 16px; border-radius: 8px;">
+                            <h1 style="font-size: 20px; color: #fff; padding: 16px; font-family: 'Sora';">{{album.albumId.name_album | TitlePipe}}</h1>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
